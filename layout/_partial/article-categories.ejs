@@ -1,0 +1,15 @@
+<!-- refer to: http://www.codeblocq.com/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/ -->
+
+<% if (page.categories && page.categories.length){ %>
+<%
+    var categories = [];
+    page.categories.forEach(function(category){
+        categories.push('<a href="' + config.root + category.path + '">' + category.name + '</a>');
+    });
+%>
+<div>
+    <span class="glyphicon glyphicon-folder-open"></span>
+    &nbsp;
+    <%- categories.join(' / ') %>
+</div>
+<% } %>

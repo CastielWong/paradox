@@ -1,0 +1,10 @@
+<% site.posts.sort('date','desc').forEach(function(post){ %>
+
+	<ul>
+		<li>
+			<%- date(post.date, 'YYYY.MM.DD') %>
+			<a href="<%- url_for(config.root + post.path) %>"><%- post.title %></a>
+		</li>
+	</ul>
+
+<% }) %>

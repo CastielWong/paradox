@@ -1,0 +1,38 @@
+#header {
+	background-color: #333;
+	/*background-color: #7ab9ea;*/
+	color: #2ECC71;
+	/*color: #3498DB;*/
+	/*color: white;*/
+}
+
+#boundary {
+	border-left: 1px solid #B0B0B0;
+	height: 500px;
+}
+
+.leftheader {
+	margin-left: 30px;
+}
+
+.rightheader {
+	margin-right: 30px;
+}
+
+.auxiliary {
+	margin-left: 20px;
+	margin-bottom: 30px;
+}
+
+.auxiliary hr{
+    border: 0;
+    height: 1px;
+    width: 300px;
+    background: #B0B0B0;
+    /*background-image: linear-gradient(to right, #ccc, #333, #ccc);*/
+}
+
+p {
+	line-height: 1.6em;
+    margin: 1.6em 0px;
+}

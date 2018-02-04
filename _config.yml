@@ -1,0 +1,7 @@
+disqus: castielwong ## Your disqus_shortname, e.g. username
+
+menu:
+  home: /
+  archives: /archives
+  tags: /tags
+  about: /about

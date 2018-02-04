@@ -1,0 +1,64 @@
+<!-- refer to https://imsun.net/posts/gitment-introduction/ -->
+<!-- Gitment won't work locally -->
+<!-- It needs to be intialized for each new post, so that a new issue page can be assigned to it. Be patient, it may take several minutes to intialize. Comments can be deleted by closing or retrieved by reopening the issue page, but the old comments would be covered if a new issue page was initialized. -->
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    // id: 'location.href', // 可选。默认为 location.href
+    owner: 'CastielWong',
+    // repo: 'github.com/CastielWong/castielwong.github.io/issues/1',
+    repo: 'blogGitment', 
+    oauth: {
+      client_id: '00578b6541e68ad47680',
+      client_secret: 'aeee960fb85fac2f2fda3462da5f810d62d85a0f',
+    },
+  })
+  gitment.render('container')
+</script>
+
+
+
+
+<!-- Refer to https://nemethgergely.com/using-github-for-comments-on-your-blog/ -->
+<!-- https://github.com/gergelyke/blog/blob/master/themes/cactus-light/layout/_partial/comments.ejs -->
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+    var apiUrl = 'https://api.github.com/repos/CastielWong/castielwong.github.io/issues/<%- page.githubIssueId %>/comments?per_page=100'
+    console.log("first flag")
+    document.addEventListener('DOMContentLoaded', function(event) { 
+      $.ajax(apiUrl, {
+        headers: {
+          Accept: 'application/vnd.github.v3.html+json'
+        },
+        dataType: 'json',
+        success: function(comments) {
+          const $commentSection = $('.blog-post-comments')
+          comments.forEach(function (comment) {
+            $commentSection.append(
+              `
+              <div class="comment">
+                <a class="commenter" href="${comment.user.html_url}" target="_blank">${comment.user.login}</a>, ${new Date(comment.created_at).toUTCString()}
+                <p>
+                  ${comment.body_html}
+                </p>
+              </div>
+              `
+            )
+          })
+        }
+      })
+    })
+  </script>
+  
+  <div class="blog-post-comments">
+    <a class="blog-post-comment-button" href="https://api.github.com/repos/CastielWong/castielwong.github.io/issues/<%- page.githubIssueId %>#new_comment_field" target="_blank">Visit GitHub to add a comment</a>
+  </div> -->
+
+  <!-- <% if(page.githubIssueId){ %> -->
+  <!-- <% } %> -->

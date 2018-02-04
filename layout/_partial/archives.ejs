@@ -1,0 +1,41 @@
+<!-- refer back to theme landscape -->
+
+<% if (pagination == 2){ %>
+	<% page.posts.each(function(post){ %>
+		<%- partial('article', {post: post, index: true}) %>
+	<% }) %>
+<% } else { %>
+	<% var last; %>
+	<% page.posts.each(function(post, i){ %>
+		<% var year = post.date.year(); %>
+		<% if (last != year){ %>
+			<% if (last != null){ %>
+				</div></section>
+			<% } %>
+			<% last = year; %>
+			<section class="archives-wrap">
+				<div class="archive-year-wrap">
+					<h3><a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a></h3>
+				</div>
+				<div class="archives">
+		<% } %>
+
+		<ul>
+			<li>
+				<a href="<%- url_for(config.root + post.path) %>"><%- post.title %></a>
+			</li>
+		</ul>
+		
+	<% }) %>
+	<% if (page.posts.length){ %>
+		</div></section>
+	<% } %>
+<% } %>
+<% if (page.total > 1){ %>
+	<nav id="page-nav">
+	<%- paginator({
+		prev_text: "&laquo; __('prev')",
+		next_text: "__('next') &raquo;"
+	}) %>
+	</nav>
+<% } %>

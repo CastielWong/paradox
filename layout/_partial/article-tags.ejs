@@ -1,0 +1,15 @@
+<!-- refer to: http://www.codeblocq.com/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/ -->
+
+<% if (page.tags && page.tags.length){ %>
+<%
+    var tags = [];
+    page.tags.forEach(function(tag){
+        tags.push('<a href="' + config.root + tag.path + '">#' + tag.name + '</a>');
+    });
+%>
+<div>
+	<span class="glyphicon glyphicon-tags"></span>
+	&nbsp;
+    <%- tags.join(' ') %>
+</div>
+<% } %>
