@@ -11,3 +11,8 @@ Usage of glyphicon in the theme
 - Shared: glyphicon-bookmark
 - Bio: glyphicon-pencil
 - Book: glyphicon-book
+
+Since Bootstrap 4 doesn't support _glyphicon_, add _Font Awesome_ instead
+
+add <link href="/bootstrap-4.0.0-dist/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome.css" rel="stylesheet">
+and <script src="/bootstrap-4.0.0-dist/fontawesome-free-5.0.6/on-server/js/fontawesome-all.js"></script>
